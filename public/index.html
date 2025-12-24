@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data-over-Sound Messenger</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            background-color: #f4f4f9;
+        }
+        header {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .status {
+            margin: 10px 0;
+        }
+        .spectrum {
+            width: 80%;
+            height: 200px;
+            background: #ddd;
+            margin: 20px 0;
+        }
+        button {
+            padding: 10px 20px;
+            margin: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>Data-over-Sound Messenger</header>
+    <div class="status" id="status">Status: Idle</div>
+    <div class="spectrum" id="spectrum">Spectrum Visualization</div>
+    <button onclick="startTransmitting()">Start Transmitting</button>
+    <button onclick="startListening()">Start Listening</button>
+
+    <script>
+        function startTransmitting() {
+            document.getElementById('status').innerText = 'Status: Transmitting...';
+            console.log('Transmitting started');
+        }
+
+        function startListening() {
+            document.getElementById('status').innerText = 'Status: Listening...';
+            console.log('Listening started');
+        }
+    </script>
+</body>
+</html>
