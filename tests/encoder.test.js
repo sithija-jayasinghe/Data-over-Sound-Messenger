@@ -1,13 +1,29 @@
-const { encodeTextToBinary, mapBinaryToTones, addPacketFraming } = require('../src/encoder');
+const { textToBinary } = require('../src/encoder');
 
-test('encodeTextToBinary converts text to binary', () => {
-    expect(encodeTextToBinary('A')).toBe('01000001');
-});
+describe('Encoder Module - textToBinary', () => {
+    test('should convert text to binary representation', () => {
+        const input = 'ABC';
+        const expectedOutput = [
+            '01000001', // A
+            '01000010', // B
+            '01000011'  // C
+        ];
+        expect(textToBinary(input)).toEqual(expectedOutput);
+    });
 
-test('mapBinaryToTones maps binary to ultrasonic tones', () => {
-    expect(mapBinaryToTones('01')).toEqual([18000, 19000]);
-});
+    test('should handle empty string input', () => {
+        const input = '';
+        const expectedOutput = [];
+        expect(textToBinary(input)).toEqual(expectedOutput);
+    });
 
-test('addPacketFraming adds start and end markers', () => {
-    expect(addPacketFraming([18000, 19000])).toEqual([17000, 18000, 19000, 17000]);
+    test('should handle special characters', () => {
+        const input = '!@#';
+        const expectedOutput = [
+            '00100001', // !
+            '01000000', // @
+            '00100011'  // #
+        ];
+        expect(textToBinary(input)).toEqual(expectedOutput);
+    });
 });

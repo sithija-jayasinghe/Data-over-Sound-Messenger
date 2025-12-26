@@ -1,6 +1,17 @@
 // Encoder Module
 // Converts text to binary, maps binary to ultrasonic tones, and adds packet framing.
 
+/**
+ * Converts a text string into binary representation.
+ * @param {string} text - The input text to encode.
+ * @returns {string[]} - An array of binary strings.
+ */
+function textToBinary(text) {
+    return text.split('').map(char => {
+        return char.charCodeAt(0).toString(2).padStart(8, '0');
+    });
+}
+
 function encodeTextToBinary(text) {
     return text.split('').map(char => char.charCodeAt(0).toString(2).padStart(8, '0')).join('');
 }
@@ -19,4 +30,4 @@ function addPacketFraming(tones) {
     return [...startMarker, ...tones, ...endMarker];
 }
 
-module.exports = { encodeTextToBinary, mapBinaryToTones, addPacketFraming };
+module.exports = { textToBinary, encodeTextToBinary, mapBinaryToTones, addPacketFraming };
