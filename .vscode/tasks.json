@@ -54,6 +54,15 @@
 			"isBackground": false,
 			"problemMatcher": [],
 			"group": "test"
+		},
+		{
+			"label": "Run Checksum Tests",
+			"type": "shell",
+			"command": "npx jest tests/checksum.test.js",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
 		}
 	]
 }
