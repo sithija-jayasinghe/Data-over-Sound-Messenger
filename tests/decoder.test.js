@@ -1,9 +1,15 @@
-const { decodeFrequenciesToBinary, extractDataFromPacket } = require('../src/decoder');
+const { applyFFT } = require('../src/decoder');
 
-test('decodeFrequenciesToBinary converts frequencies to binary', () => {
-    expect(decodeFrequenciesToBinary([18000, 19000])).toBe('01');
-});
+describe('Decoder Module - applyFFT', () => {
+    test('should return detected frequencies from audio data', () => {
+        const inputAudioData = new Float32Array([0.1, 0.2, 0.3, 0.4]); // Example audio data
+        const expectedFrequencies = [18000, 19000]; // Example detected frequencies
+        expect(applyFFT(inputAudioData)).toEqual(expectedFrequencies);
+    });
 
-test('extractDataFromPacket extracts data from framed binary', () => {
-    expect(extractDataFromPacket('101010100100000110101010')).toBe('01000001');
+    test('should handle empty audio data', () => {
+        const inputAudioData = new Float32Array([]);
+        const expectedFrequencies = []; // No frequencies detected
+        expect(applyFFT(inputAudioData)).toEqual(expectedFrequencies);
+    });
 });

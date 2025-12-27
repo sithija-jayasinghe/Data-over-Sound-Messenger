@@ -18,6 +18,42 @@
 			"isBackground": false,
 			"problemMatcher": [],
 			"group": "test"
+		},
+		{
+			"label": "Run Decoder Tests",
+			"type": "shell",
+			"command": "npx jest tests/decoder.test.js",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Run Decoder Tests",
+			"type": "shell",
+			"command": "npx jest tests/decoder.test.js",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Run Decoder Tests",
+			"type": "shell",
+			"command": "npx jest tests/decoder.test.js",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
+		},
+		{
+			"label": "Run Decoder Tests",
+			"type": "shell",
+			"command": "npx jest tests/decoder.test.js",
+			"args": [],
+			"isBackground": false,
+			"problemMatcher": [],
+			"group": "test"
 		}
 	]
 }
